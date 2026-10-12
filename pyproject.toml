@@ -1,0 +1,22 @@
+[project]
+name = "ask-the-handbook"
+version = "0.1.0"
+description = "Ask questions about your documents and get answers with exact citations. Powered by Claude."
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=1.13.0",
+    "fastapi>=0.143.0",
+    "pypdf>=6.20.1",
+    "python-multipart>=0.0.32",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

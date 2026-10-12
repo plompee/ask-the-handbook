@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask the Handbook</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%235b8cff'/%3E%3Cpath d='M9 8h10l4 4v12H9z' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M12 16h8M12 20h6' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand"><span class="brand-logo">📘</span><div><b>Ask the Handbook</b><small>Answers with sources</small></div></div>
+  <label class="drop" id="drop" for="file">
+    <input type="file" id="file" accept=".pdf,.txt,.md" multiple hidden>
+    <span>⬆</span><b>Add documents</b><small>Drop PDF, .txt or .md files here</small>
+  </label>
+  <button class="btn ghost full" id="samples" type="button">Load sample documents</button>
+  <p class="side-label">Library <span id="lib-count"></span></p>
+  <ul class="docs" id="docs"></ul>
+  <div class="key" id="key-status"></div>
+</aside>
+
+<main class="chat">
+  <header class="chat-head">
+    <div><h1>Ask anything about your documents</h1><p class="muted">Every answer shows the exact passage it came from. If it isn't in your files, it says so.</p></div>
+    <button class="btn ghost sm" id="clear" type="button">Clear history</button>
+  </header>
+  <ol class="thread" id="thread" aria-live="polite"></ol>
+  <form class="ask" id="ask">
+    <textarea id="question" rows="1" maxlength="1000" placeholder="e.g. How many holiday days do I get?" aria-label="Your question"></textarea>
+    <button class="btn primary" type="submit">Ask</button>
+  </form>
+</main>
+
+<div class="toast" id="toast" role="alert"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
